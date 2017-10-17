@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Curso ReactJS - reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Customizations on the reveal.js theme -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section data-background-image="img/react.jpeg">
+          <!-- Primeiro slide, logo React -->
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+          # Agenda
+
+          1. O que é React?
+          2. Como usar o React?
+          3. React Avançado
+          4. Redux
+          5. Setup
+          6. Dojo
+          </textarea>
+        </section>
+        <!-- ##################################################
+             #######    Parte 1 - O que é React ###############
+             ################################################## -->
+				<section data-markdown>
+          <textarea data-template>
+            # O que é React?
+
+            - O que é?
+            - Quem está por trás do React?
+            - Para que ele existe?
+            - Library ou framework?
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            # 1 - O que é React?
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            React é uma library open-source (MIT) apoiado e de$envolvido pelo Facebook.
+
+            <img src="img/facebook.png" alt="Facebook" />
+          </textarea>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              Desenvolvida para resolver um problema
+            </textarea>
+          </section>
+          <section>
+            <img class="stretch" src="img/mvc.png" alt="Model View Controller"></img>
+          </section>
+          <section>
+            <img class="stretch" src="img/mvc_react.png" alt="Model View Controller e o React"></img>
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              React é uma library, não uma framework
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              Uma framework disponibiliza padrões em todos os aspectos do projeto.
+              Como organizar os arquivos, quais componentes usar para efetuar
+              requisições HTTP, router, manipulação de estados, etc.
+
+              React é uma library que deixa aberto para o desenvolvedor escolher
+              os componentes para os varios aspectos do seu projeto.
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Um ambiente completo de soluções:
+
+              - Pode mapear URLs para Paginas (routing): React-Router, Universal Router
+              - Pode fazer requisições HTTP: $.ajax, Axios, fetch
+              - Pode gerenciar estado: Redux
+              - Pode compilar nativamente aplicações para smartphones: React Native
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              React é super poderoso e deixa todas as decisões para o desenvolvedor
+              <img src="img/poderoso.jpg" alt="Model View Controller"></img>
+            </textarea>
+          </section>
+          <section>
+              <img class="stretch" src="img/responsabilidade.jpg" alt="Com grandes poderes, vem grandes responsabilidades"></img>
+          </section>
+        </section>
+        <!-- ##################################################
+             #######    Parte 2 - Como usar o React? ##########
+             ################################################## -->
+				<section data-markdown>
+          <textarea data-template>
+            # 2 - Como usar o React?
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            JSX
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            O HelloWorld dos Components
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            Props
+            - O que são
+            - Imutaveis
+            - this.props.nome_da_propriedade
+            - defaultProps
+            - propTypes
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            State
+            - O que são
+            - Mutaveis
+            - this.state.nome_da_propriedade
+            - setState
+            - Inicializando o state
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            Eventos
+            - O que são
+            - Quais são
+            - Como usa-los
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            Extendendo o Component
+          </textarea>
+        </section>
+        <!-- ##################################################
+             #######    Parte 3 - React Avançado ##############
+             ################################################## -->
+				<section data-markdown>
+          <textarea data-template>
+            O Life-Cycle
+            - componentWillMount
+            - componentDidMount
+            - componentWillReceiveProps
+            - shouldComponentUpdate
+            - componentWillUnmount
+            - componentWillUpdate
+            - componentDidUpdate
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            O JSX, por baixo dos panos
+            - VirtualDOM é o JSX
+            - Graficos de renderização
+          </textarea>
+        </section>
+        <!-- ##################################################
+             #######    Parte 4 - Redux #######################
+             ################################################## -->
+				<section data-markdown>
+          <textarea data-template>
+            O Gerenciamento de Dados
+            - Algum diagrama?
+            - Adicionando Redux ao projeto
+            - Criando um store redux
+            - Imutabilidade
+            - Actions
+          </textarea>
+        </section>
+        <!-- ##################################################
+             #######    Parte 5 - Setup #######################
+             ################################################## -->
+				<section data-markdown>
+          <textarea data-template>
+            Instalar o create-react-app
+            Criando um projeto
+          </textarea>
+        </section>
+				<section data-markdown>
+          <textarea data-template>
+            # ? - Criando um projeto React
+          </textarea>
+        </section>
+				<section>
+          <pre>
+            <code data-trim data-noescape>
+            $ npm install -g create-react-app
+            $ create-react-app fatec_app
+            $ cd fatec_app
+            $ npm start
+	          </code>
+          </pre>
+        </section>
+        <section>
+          <img class="stretch" src="img/npm_start_navegador.png" alt="NPM Start"></img>
+        </section>
+        <!-- ##################################################
+             #######    Parte 6 - Dojo ########################
+             ################################################## -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
