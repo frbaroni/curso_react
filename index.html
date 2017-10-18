@@ -153,11 +153,11 @@ export default App;
           <section data-markdown>
             <textarea data-template>
               Props
-              - O que são
-              - Imutaveis
-              - this.props.nome_da_propriedade
-              - defaultProps
-              - propTypes
+              - O que são?
+              - Como passamos a prop para o componente?
+              - Como lemos suas propriedades?
+              - defaultProps?
+              - propTypes?
             </textarea>
           </section>
           <section>
@@ -180,6 +180,28 @@ class OiMundo extends Component {
 }
 
 export default OiMundo;
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Como passamos a prop para o componente?</h2>
+            <pre>
+              <code data-trim data-noescape>
+&lt;OiMundo <mark>nomeee="Fernando"</mark> /&gt;
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Como lemos suas propriedades?</h2>
+            <pre>
+              <code data-trim data-noescape>
+class OiMundo extends Component {
+  render() {
+    return (
+      &lt;span&gt;<mark>{this.props.nomeee}</mark>&lt;/span&gt;
+    );
+  }
+}
               </code>
             </pre>
           </section>
