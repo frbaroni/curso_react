@@ -125,7 +125,7 @@
           </textarea>
         </section>
         <section>
-          <h2>App.js</h2>
+          <h2>JSX - App.js</h2>
           <pre class="stretch">
             <code data-trim data-noescape>
 class App extends Component {
@@ -133,11 +133,12 @@ class App extends Component {
     return (
       &lt;div className="App"&gt;
         &lt;header className="App-header"&gt;
-          &lt;img src=<mark>{logo}</mark> className="App-logo" alt="logo" /&gt;
+          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
           &lt;h1 className="App-title"&gt;Welcome to React&lt;/h1&gt;
         &lt;/header&gt;
 <mark>        &lt;p className="App-intro"&gt;</mark>
           To get started, edit &lt;code&gt;src/App.js&lt;/code&gt; ...
+          1 + 2 = <mark>{1 + 2}</mark>
         &lt;/p&gt;
       &lt;/div&gt;
     );
@@ -148,25 +149,40 @@ export default App;
 	          </code>
           </pre>
         </section>
-				<section data-markdown>
-          <textarea data-template>
-            JSX
-          </textarea>
-        </section>
-				<section data-markdown>
-          <textarea data-template>
-            O HelloWorld dos Components
-          </textarea>
-        </section>
-				<section data-markdown>
-          <textarea data-template>
-            Props
-            - O que são
-            - Imutaveis
-            - this.props.nome_da_propriedade
-            - defaultProps
-            - propTypes
-          </textarea>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              Props
+              - O que são
+              - Imutaveis
+              - this.props.nome_da_propriedade
+              - defaultProps
+              - propTypes
+            </textarea>
+          </section>
+          <section>
+            <h2>O que são?</h2>
+            <pre>
+              <code data-trim data-noescape>
+&lt;OiMundo <mark>nomeee="Fernando"</mark> /&gt;
+              </code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape>
+import React, { Component } from 'react';
+
+class OiMundo extends Component {
+  render() {
+    return (
+      &lt;span&gt;<mark>{this.props.nomeee}</mark>&lt;/span&gt;
+    );
+  }
+}
+
+export default OiMundo;
+              </code>
+            </pre>
+          </section>
         </section>
 				<section data-markdown>
           <textarea data-template>
