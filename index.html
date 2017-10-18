@@ -156,7 +156,7 @@ export default App;
               - O que são?
               - Como passamos a prop para o componente?
               - Como lemos suas propriedades?
-              - defaultProps?
+              - Definindo valores padrões para as Props
               - propTypes?
             </textarea>
           </section>
@@ -202,6 +202,36 @@ class OiMundo extends Component {
     );
   }
 }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Definindo valores padrões para as Props</h2>
+            <pre>
+              <code data-trim data-noescape>
+class OiMundo extends Component {
+<mark>  static defaultProps = {
+    nomeee: 'FATEC',
+  }</mark>
+
+  render() {
+    return (
+      &lt;span&gt;{this.props.nomeee}&lt;/span&gt;
+    );
+  }
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Definindo valores padrões para as Props</h2>
+            <pre>
+              <code data-trim data-noescape>
+        &lt;OiMundo nomeee="Fernando" /&gt;
+        // Fernando
+
+        &lt;OiMundo /&gt;
+        // FATEC
               </code>
             </pre>
           </section>
