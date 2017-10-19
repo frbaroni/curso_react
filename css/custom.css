@@ -11,3 +11,6 @@
   box-shadow:none;
 }
 
+mark {
+  background-color: rgba(128, 200, 255, 0.5);
+}
