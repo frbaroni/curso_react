@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Beber extends Component {
   static propTypes = {
-    idade: PropTypes.number
+    idade: PropTypes.number.isRequired
   }
 
   render() {
