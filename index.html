@@ -124,25 +124,145 @@
             # 2 - Como usar o React?
           </textarea>
         </section>
-				<section data-markdown>
-          <textarea data-template>
-            JSX
-          </textarea>
+        <section>
+          <h2>JSX - App.js</h2>
+          <pre class="stretch">
+            <code data-trim data-noescape>
+class App extends Component {
+<mark>  render() {</mark>
+    return (
+      &lt;div className="App"&gt;
+        &lt;header className="App-header"&gt;
+          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
+          &lt;h1 className="App-title"&gt;Welcome to React&lt;/h1&gt;
+        &lt;/header&gt;
+<mark>        &lt;p className="App-intro"&gt;</mark>
+          To get started, edit &lt;code&gt;src/App.js&lt;/code&gt; ...
+          1 + 2 = <mark>{1 + 2}</mark>
+        &lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default App;
+	          </code>
+          </pre>
         </section>
-				<section data-markdown>
-          <textarea data-template>
-            O HelloWorld dos Components
-          </textarea>
-        </section>
-				<section data-markdown>
-          <textarea data-template>
-            Props
-            - O que são
-            - Imutaveis
-            - this.props.nome_da_propriedade
-            - defaultProps
-            - propTypes
-          </textarea>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              Props
+              - O que são?
+              - Como passamos a prop para o componente?
+              - Como lemos suas propriedades?
+              - Definindo valores padrões para as Props
+              - propTypes
+            </textarea>
+          </section>
+          <section>
+            <h2>O que são?</h2>
+            <pre>
+              <code data-trim data-noescape>
+&lt;OiMundo <mark>nomeee="Fernando"</mark> /&gt;
+              </code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape>
+import React, { Component } from 'react';
+
+class OiMundo extends Component {
+  render() {
+    return (
+      &lt;span&gt;<mark>{this.props.nomeee}</mark>&lt;/span&gt;
+    );
+  }
+}
+
+export default OiMundo;
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Como passamos a prop para o componente?</h2>
+            <pre>
+              <code data-trim data-noescape>
+&lt;OiMundo <mark>nomeee="Fernando"</mark> /&gt;
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Como lemos suas propriedades?</h2>
+            <pre>
+              <code data-trim data-noescape>
+class OiMundo extends Component {
+  render() {
+    return (
+      &lt;span&gt;<mark>{this.props.nomeee}</mark>&lt;/span&gt;
+    );
+  }
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Definindo valores padrões para as Props</h2>
+            <pre>
+              <code data-trim data-noescape>
+class OiMundo extends Component {
+<mark>  static defaultProps = {
+    nomeee: 'FATEC',
+  }</mark>
+
+  render() {
+    return (
+      &lt;span&gt;{this.props.nomeee}&lt;/span&gt;
+    );
+  }
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Definindo valores padrões para as Props</h2>
+            <pre>
+              <code data-trim data-noescape>
+        &lt;OiMundo nomeee="Fernando" /&gt;
+        // Fernando
+
+        &lt;OiMundo /&gt;
+        // FATEC
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>propTypes</h2>
+            <pre class="stretch">
+              <code data-trim data-noescape>
+        &lt;Beber /&gt;
+        &lt;Beber idade="13" /&gt;
+        &lt;Beber idade="18" /&gt;
+        &lt;Beber idade="23" /&gt;
+        &lt;Beber idade="32" /&gt;
+        &lt;Beber idade="abc"/&gt;
+
+        //Só anos? Vai estudar, muleque!
+        //Só 13 anos? Vai estudar, muleque!
+        //Só 18 anos? Vai estudar, muleque!
+        //#BoraProBar #Itaipava #EhNois23
+        //#BoraProBar #Itaipava #EhNois32
+        //Só abc anos? Vai estudar, muleque!
+        // <span style="color: red">Warning: Failed prop type: The prop</span>
+        // <span style="color: red">`idade` is marked as required in `Beber`</span>
+        // <span style="color: red">, but its value is `undefined`.</span>
+        // <span style="color: red">Warning: Failed prop type: Invalid prop</span>
+        // <span style="color: red">`idade` of type `string` supplied to</span>
+        // <span style="color: red">`Beber`, expected `number`.</span>
+              </code>
+            </pre>
+          </section>
+        <section data-background-image="img/boom.jpg">
+          <!-- Booooom -->
         </section>
 				<section data-markdown>
           <textarea data-template>
@@ -188,6 +308,7 @@
             - VirtualDOM é o JSX
             - Graficos de renderização
           </textarea>
+				</section>
         </section>
         <!-- ##################################################
              #######    Parte 4 - Redux #######################
@@ -198,14 +319,6 @@
 	       	</textarea>
 	      </section>
 				<section>
-					<!--
-						O Gerenciamento de Dados
-							- Algum diagrama?
-							- Adicionando Redux ao projeto
-							- Criando um store redux
-							- Imutabilidade
-							- Actions
-					-->
 					<section data-markdown>
 						<textarea data-template>
 							## O que é Redux?
@@ -309,11 +422,7 @@
 							</ul>
 						</textarea>
 					</section>
-
-
-					<section>
-						<img class="scretch" src="img/redux.jpg" alt="Diagrama do redux" />
-					</section>
+					<section data-background-image="img/redux.jpg"></section>
         </section>
         <!-- ##################################################
              #######    Parte 5 - Setup #######################
