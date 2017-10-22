@@ -198,16 +198,119 @@
 	       	</textarea>
 	      </section>
 				<section>
-					<section data-markdown>
-						<textarea data-template>
-							O Gerenciamento de Dados
+					<!--
+						O Gerenciamento de Dados
 							- Algum diagrama?
 							- Adicionando Redux ao projeto
 							- Criando um store redux
 							- Imutabilidade
 							- Actions
+					-->
+					<section data-markdown>
+						<textarea data-template>
+							## O que é Redux?
+							Redux é uma maneira de pensar o desenvolvimento de aplicações.
 						</textarea>
 					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Os 3 princípios do Redux
+							O Redux é composto de três princípios que formam e definem o seu conceito.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Um único ponto de verdade
+							Todo o estado da aplicação é mantido em apenas um único objeto chamado de Store.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## O estado é imutável
+							O estado da aplicação é inalterável, a unica maneira de afeta-lo é emitindo uma Action com a mudança.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Mudanças são feitas apenas por funções puras
+							Reducers recebem as Actions emitidas e aplicam-nas ao estado. Sempre retornando um novo estado.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Mas o que é Estado?
+							Estado é ser considerado o conjunto de dados mantidos no momento em que sua aplicação está rodando no lado do cliente. Qualquer atualização que envolva alteração desses dados, automaticamente essa mudança irá alterar o estado.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Actions
+							Actions (ou ações) são objetos que servem para transmitir o que será enviado de sua view para sua store.
+
+							Actions possuem obrigatoriamente uma propriedade type que indica o tipo de ação que será executada,  e que por sua vez devem ser escritas sempre como constantes.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							<pre>
+								<code data-trim data-noescape>
+									{
+									 type: 'ENVIAR_MENSAGEM',
+									 text: 'Olá Redux'
+									}
+								</code>
+							</pre>
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Reducers
+							Actions descrevem de fato que algo aconteceu e o papel dos Reducers é transmitir o que aconteceu para alterar devidamente sua store
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							<pre>
+								<code data-trim data-noescape style="max-height: 550px !important;">
+									let initialState = {
+									  mensagem: 'Olá Mundo'
+									}
+
+									function olaMundo(state = initialState, action) {
+									  switch (action.type) {
+									    case ENVIAR_MENSAGEM:
+									      return Object.assign({}, state, {
+									        mensagem: action.text
+									      })
+
+									    case APAGAR_MENSAGEM:
+									      return Object.assign({}, state, {
+									        mensagem: ''
+									      })
+
+									    default:
+									      return state
+									  }
+									}
+								</code>
+							</pre>
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Store
+							Além de manter o estado da aplicação como já falado antes. A Store também tem algumas outras responsabilidades, são Elas:
+
+							<ul>
+								<li>Permitir a leitura do estado através do método getState();</li>
+								<li>Permitir que o estado seja alterado pelos Reducers;</li>
+								<li>Registrar Listeners para escutar o estado à partir do método subscribe(listener);</li>
+								<li>Manipular os Listeners registrados.</li>
+							</ul>
+						</textarea>
+					</section>
+
+
 					<section>
 						<img class="scretch" src="img/redux.jpg" alt="Diagrama do redux" />
 					</section>
