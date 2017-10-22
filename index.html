@@ -261,18 +261,97 @@ class OiMundo extends Component {
               </code>
             </pre>
           </section>
-        <section data-background-image="img/boom.jpg">
-          <!-- Booooom -->
+          <section data-background-image="img/boom.jpg">
+            <!-- Booooom -->
+          </section>
         </section>
-				<section data-markdown>
-          <textarea data-template>
-            State
-            - O que são
-            - Mutaveis
-            - this.state.nome_da_propriedade
-            - setState
-            - Inicializando o state
-          </textarea>
+				<section>
+          <section data-markdown>
+            <textarea data-template>
+              State
+              - O que são?
+              - Como inicializamos um State?
+              - Como lemos o State?
+              - Atualizando o State
+            </textarea>
+          </section>
+          <section>
+            <pre class="stretch">
+              <h2>O que são?</h2>
+              <code data-trim data-noescape>
+class Estado extends Component {
+<mark>  state = {</mark>
+<mark>    cliques: 0</mark>
+<mark>  }</mark>
+
+  quandoClicamos = (evento) =&gt; {
+<mark>    this.setState({</mark>
+<mark>      cliques: this.state.cliques + 1</mark>
+<mark>    })</mark>
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Fui clicado <mark>{this.state.cliques}</mark>&lt;/p&gt;
+        &lt;button onClick={this.quandoClicamos}&gt;
+          Adicionar um clique
+        &lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <h2>Como inicializamos um State?</h2>
+              <code data-trim data-noescape>
+class Estado extends Component {
+<mark>  state = {</mark>
+<mark>    cliques: 0</mark>
+<mark>  }</mark>
+  ...
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <h2>Como lemos o State?</h2>
+              <code data-trim data-noescape>
+class Estado extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Fui clicado <mark>{this.state.cliques}</mark>&lt;/p&gt;
+        &lt;button onClick={this.quandoClicamos}&gt;
+          Adicionar um clique
+        &lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <h2>Atualizando o State</h2>
+              <code data-trim data-noescape>
+class Estado extends Component {
+  ...
+  quandoClicamos = (evento) =&gt; {
+<mark>    this.setState({</mark>
+<mark>      cliques: this.state.cliques + 1</mark>
+<mark>    })</mark>
+  }
+  ...
+}
+              </code>
+            </pre>
+          </section>
         </section>
 				<section data-markdown>
           <textarea data-template>
@@ -309,7 +388,6 @@ class OiMundo extends Component {
             - Graficos de renderização
           </textarea>
 				</section>
-        </section>
         <!-- ##################################################
              #######    Parte 4 - Redux #######################
              ################################################## -->
