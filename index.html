@@ -448,8 +448,12 @@ class Estado extends Component {
             <h2>Como usa-los?</h2>
             <pre>
               <code data-trim data-noescape class="stretch">
-<mark>quandoMouseEntrar = (evento) =&gt; {</mark>
-  this.setState({ em_cima: true })
+class Estado extends Component {
+  ...
+<mark>  quandoMouseEntrar = (evento) =&gt; {</mark>
+    this.setState({ em_cima: true })
+  }
+  ...
 }
               </code>
             </pre>
@@ -460,7 +464,7 @@ class Estado extends Component {
             <pre>
               <code data-trim data-noescape class="stretch">
         &lt;div style={quadradoEstilo}
-          <mark>onMouseOver={this.quandoMouseEntrar}&gt;</mark>
+          <mark>onMouseOver={this.quandoMouseEntrar}</mark>&gt;
               </code>
             </pre>
             Atribuimos a um elemento (no nosso caso, o <i>div</i>), a função que criamos
@@ -470,7 +474,7 @@ class Estado extends Component {
             <pre>
               <code data-trim data-noescape class="stretch">
         &lt;div style={quadradoEstilo}
-          onMouseOver=<mark>{this.quandoMouseEntrar}&gt;</mark>
+          onMouseOver=<mark>{this.quandoMouseEntrar}</mark>&gt;
               </code>
             </pre>
             Detalhe: atribuimos ao elemento: uma referencia de uma função. <br />
@@ -486,7 +490,7 @@ quandoMouseEntrar = (evento) =&gt; {
 }
               </code>
             </pre>
-            Podemos usar a nossa função para alterar o estado, usando o <i>this.setState</i>
+            Podemos usar a nossa função para alterar o estado, usando o <i>this.setState(...)</i>
           </section>
         </section>
         <section>
