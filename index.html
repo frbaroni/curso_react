@@ -36,10 +36,9 @@
 
           1. O que é React?
           2. Como usar o React?
-          3. React Avançado
-          4. Redux
-          5. Setup
-          6. Dojo
+          3. Redux
+          4. Setup
+          5. Dojo
           </textarea>
         </section>
         <!-- ##################################################
@@ -125,34 +124,83 @@
           </textarea>
         </section>
         <section>
-          <h2>JSX - App.js</h2>
-          <pre class="stretch">
-            <code data-trim data-noescape>
-class App extends Component {
-<mark>  render() {</mark>
+          <section>
+            <h2>JSX - App.js</h2>
+            <pre class="stretch">
+              <code data-trim data-noescape>
+  class App extends Component {
+  <mark>  render() {</mark>
+      return (
+        &lt;div className="App"&gt;
+          &lt;header className="App-header"&gt;
+            &lt;img src={logo} className="App-logo" alt="logo" /&gt;
+            &lt;h1 className="App-title"&gt;Welcome to React&lt;/h1&gt;
+          &lt;/header&gt;
+  <mark>        &lt;p className="App-intro"&gt;</mark>
+            To get started, edit &lt;code&gt;src/App.js&lt;/code&gt; ...
+            1 + 2 = <mark>{1 + 2}</mark>
+          &lt;/p&gt;
+        &lt;/div&gt;
+      );
+    }
+  }
+
+  export default App;
+              </code>
+            </pre>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              React: é tudo sobre componentes
+            </textarea>
+          </section>
+          <section>
+            <h2>Functional Components</h2>
+            <h3>Criando um componente</h3>
+            <pre>
+              <code data-trim data-noescape>
+function PrimeiroComponente(props) {
+return &lt;span&gt;Olá {props.nome}&lt;/span&gt;
+}
+              </code>
+            </pre>
+            <h3>Invocando um componente</h3>
+            <pre>
+              <code data-trim data-noescape>
+       &lt;PrimeiroComponente nome="Fernando" /&gt;
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Class components</h2>
+            <pre>
+              <code data-trim data-noescape>
+import React, { Component } from 'react';
+
+class OiMundo extends Component {
+  render() {
     return (
-      &lt;div className="App"&gt;
-        &lt;header className="App-header"&gt;
-          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
-          &lt;h1 className="App-title"&gt;Welcome to React&lt;/h1&gt;
-        &lt;/header&gt;
-<mark>        &lt;p className="App-intro"&gt;</mark>
-          To get started, edit &lt;code&gt;src/App.js&lt;/code&gt; ...
-          1 + 2 = <mark>{1 + 2}</mark>
-        &lt;/p&gt;
-      &lt;/div&gt;
+      &lt;span&gt;Oi Mundo&lt;/span&gt;
     );
   }
 }
 
-export default App;
-	          </code>
-          </pre>
+export default OiMundo;
+              </code>
+            </pre>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Functional vs Class components
+              - Functional Components são indicados para casos bem simples, geralmente só renderizam alguma coisa.
+              - Class Components já são indicados para os casos complexos, geralmente envolvendo estados.
+            </textarea>
+          </section>
         </section>
         <section>
           <section data-markdown>
             <textarea data-template>
-              Props
+              ## Props
               - O que são?
               - Como passamos a prop para o componente?
               - Como lemos suas propriedades?
@@ -261,14 +309,11 @@ class OiMundo extends Component {
               </code>
             </pre>
           </section>
-          <section data-background-image="img/boom.jpg">
-            <!-- Booooom -->
-          </section>
         </section>
 				<section>
           <section data-markdown>
             <textarea data-template>
-              State
+              ## State
               - O que são?
               - Como inicializamos um State?
               - Como lemos o State?
@@ -276,8 +321,8 @@ class OiMundo extends Component {
             </textarea>
           </section>
           <section>
+            <h2>O que são?</h2>
             <pre class="stretch">
-              <h2>O que são?</h2>
               <code data-trim data-noescape>
 class Estado extends Component {
 <mark>  state = {</mark>
@@ -305,8 +350,8 @@ class Estado extends Component {
             </pre>
           </section>
           <section>
+            <h2>Como inicializamos um State?</h2>
             <pre>
-              <h2>Como inicializamos um State?</h2>
               <code data-trim data-noescape>
 class Estado extends Component {
 <mark>  state = {</mark>
@@ -318,8 +363,8 @@ class Estado extends Component {
             </pre>
           </section>
           <section>
+            <h2>Como lemos o State?</h2>
             <pre>
-              <h2>Como lemos o State?</h2>
               <code data-trim data-noescape>
 class Estado extends Component {
   render() {
@@ -337,8 +382,8 @@ class Estado extends Component {
             </pre>
           </section>
           <section>
+            <h2>Atualizando o State</h2>
             <pre>
-              <h2>Atualizando o State</h2>
               <code data-trim data-noescape>
 class Estado extends Component {
   ...
@@ -353,22 +398,67 @@ class Estado extends Component {
             </pre>
           </section>
         </section>
-				<section data-markdown>
-          <textarea data-template>
-            Eventos
-            - O que são
-            - Quais são
-            - Como usa-los
-          </textarea>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Eventos
+              - O que são?
+              - Quais são?
+              - Como usa-los?
+            </textarea>
+          </section>
+          <section>
+            <h2>O que são?</h2>
+            <pre>
+              <code data-trim data-noescape class="stretch">
+  <mark>quandoMouseEntrar = (evento) =&gt; {
+    this.setState({ em_cima: true })
+  }</mark>
+
+  render() {
+    const quadradoEstilo = {
+      backgroundColor: (this.state.em_cima ? 'green' : 'red'),
+      width: '40px', height: '40px',
+    }
+    return (
+      &lt;div&gt;
+        &lt;p&gt;O mouse está {
+          this.state.em_cima ?
+            'em cima do quadrado' :
+            'fora do quadrado'}&lt;/p&gt;
+        &lt;div style={quadradoEstilo}
+          <mark>onMouseOver={this.quandoMouseEntrar}</mark>
+          <mark>onMouseOut={this.quandoMouseSair}</mark> &gt;&lt;/div&gt;
+      &lt;/div&gt;
+    )
+  }
+              </code>
+            </pre>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Quais são?
+              [SyntheticEvent - React Docs](https://reactjs.org/docs/events.html)
+              - onFocus onBlur onCopy onCut onPaste
+              - onKeyDown onKeyPress onKeyUp onChange onInput onInvalid onSubmit
+              - onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit
+              - onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave
+              - onMouseMove onMouseOut onMouseOver onMouseUp onSelect
+
+            </textarea>
+          </section>
+          <section>
+            <h2>Como usa-los?</h2>
+            <pre>
+              <code data-trim data-noescape class="stretch">
+quandoMouseEntrar = (evento) =&gt; {
+  this.setState({ em_cima: true })
+}
+              </code>
+            </pre>
+            Definimos uma função
+          </section>
         </section>
-				<section data-markdown>
-          <textarea data-template>
-            Extendendo o Component
-          </textarea>
-        </section>
-        <!-- ##################################################
-             #######    Parte 3 - React Avançado ##############
-             ################################################## -->
 				<section data-markdown>
           <textarea data-template>
             O Life-Cycle
@@ -389,11 +479,11 @@ class Estado extends Component {
           </textarea>
 				</section>
         <!-- ##################################################
-             #######    Parte 4 - Redux #######################
+             #######    Parte 3 - Redux #######################
              ################################################## -->
 				<section data-markdown>
 	       	<textarea data-template>
-	         	# 4 - Redux
+	         	# 3 - Redux
 	       	</textarea>
 	      </section>
 				<section>
@@ -503,7 +593,7 @@ class Estado extends Component {
 					<section data-background-image="img/redux.jpg"></section>
         </section>
         <!-- ##################################################
-             #######    Parte 5 - Setup #######################
+             #######    Parte 4 - Setup #######################
              ################################################## -->
 				<section data-markdown>
           <textarea data-template>
@@ -530,7 +620,7 @@ class Estado extends Component {
           <img class="stretch" src="img/npm_start_navegador.png" alt="NPM Start"></img>
         </section>
         <!-- ##################################################
-             #######    Parte 6 - Dojo ########################
+             #######    Parte 5 - Dojo ########################
              ################################################## -->
 			</div>
 		</div>

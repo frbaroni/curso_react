@@ -7,7 +7,7 @@ class OiMundo extends Component {
 
   render() {
     return (
-      <span>{this.props.nomeee}</span>
+      <p>{this.props.nomeee}</p>
     );
   }
 }
