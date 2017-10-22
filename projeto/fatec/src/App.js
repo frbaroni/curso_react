@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import OiMundo from './OiMundo.js';
 import Beber from './Beber.js';
+import Estado from './Estado.js';
 
 import './App.css';
 
@@ -17,6 +18,8 @@ class App extends Component {
         <Beber idade="23" />
         <Beber idade="32" />
         <Beber idade="abc"/>
+
+        <Estado />
       </div>
     );
   }
