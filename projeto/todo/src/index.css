@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.info-list-item {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #61b4de;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.success-list-item {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #619a4a;
+  margin-top: 5px;
+  cursor: pointer;
+}
