@@ -449,11 +449,161 @@
               <textarea data-template>
                 ## Orientação a Objetos
 
+                ### Classes
+
+                Classes nos dão uma sintaxe amigável que definem o estado e o comportamento de objetos que representam as abstrações que usamos diariamente.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Orientação a Objetos
+
+                ### constructor
+
+                O método constructor tem como tarefa fazer a inicialização da instância. Ele é chamado automaticamente na criação da mesma e garante que ela esteja em um estado válido.
+                
+                Por exemplo, se necessitarmos de uma abstração para carros em que cada carro possui uma marca, poderíamos implementar dessa forma.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                <pre class="scretch">
+                  <code style="max-height: 600px;">
+                    class Carro {
+                      constructor(marca) {
+                        this._marca = marca
+                      }
+                      
+                      getMarca() {
+                        return this._marca
+                      }
+                      
+                      setMarca(marca) {
+                        this._marca = marca
+                      }
+                    }
+                    
+                    const carro = new Carro('ferrari')
+                    carro.getMarca() // ferrari
+                    carro.setMarca('porsche')
+                    carro.getMarca() // porsche
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Orientação a Objetos
+
+                ### getters/setters
+
+                Como getters e setters são muito comuns na utilização de classes, o ES6 veio com um syntax sugar para lidar com os mesmos.
+
+                Lembrando que a principal função dos getters/setters é proteger os dados internos das instâncias de um objeto.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                <pre class="scretch">
+                  <code style="max-height: 600px;">
+                    class Carro {
+                      constructor(marca) {
+                        this._marca = marca
+                      }
+                      
+                      get marca() {
+                        return this._marca
+                      }
+                      
+                      set marca(marca) {
+                        this._marca = marca
+                      }
+                    }
+                    
+                    const carro = new Carro('ferrari')
+                    carro.marca // ferrari
+                    carro.marca = 'porsche'
+                    carro.marca // porsche
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ### herança
+                <pre class="scretch">
+                  <code style="max-height: 575px;">
+                    class Animal {
+                      constructor(name) {
+                        this._name = name
+                      }
+                        
+                      fala() {
+                        console.log(`${this._name} faz barulho`)
+                      }
+                    }
+                    
+                    class Cachorro extends Animal {
+                      fala() {
+                        console.log(`${this._name} latindo!!`)
+                      }
+                    }
+                    
+                    const viralata = new Cachorro('Rex')
+                    viralata.fala() // Rex latindo!! 
+                  </code>
+                </pre>
+              </textarea>
             </section>
             <section  data-markdown>
               <textarea data-template>
                 ## ES6 Modules
                 
+                A maioria dos desenvolvedores que já trabalhou em projetos grandes sabe a importância dos módulos: organizar o sistema, aumentar o reuso e diminuir a complexidade de cada pequeno trecho do seu code base.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## ES6 Modules
+                
+                ### export/import
+
+                Exportar e importar módulos são tarefas bem simples.
+
+                <pre class="scretch">
+                  <code>
+                    // util.js
+                    export function somar(x, y) {
+                      return x + y
+                    }
+
+                    // index.js
+                    import { somar } from 'util'
+                    somar(1, 2) // 3
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## ES6 Modules
+                
+                ### default
+
+                Como o próprio nome diz <i>default</i> (padrão), neste caso o arquivo que exporta uma função padrão, fazendo com que o nome do importa não tenha um nome fixo.
+
+                <pre class="scretch">
+                  <code>
+                    // util.js
+                    export default function(x, y) {
+                      return x + y
+                    }
+
+                    // index.js
+                    import soma from 'util'
+                    soma(1, 2) // 3
+                  </code>
+                </pre>
               </textarea>
             </section>
         </section>
