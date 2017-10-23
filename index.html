@@ -32,14 +32,17 @@
         </section>
 				<section data-markdown>
           <textarea data-template>
-          # Agenda
+            # Agenda
 
-          1. Quem sonos nozes?
-          2. O que é React?
-          3. Como usar o React?
-          4. Redux
-          5. Setup
-          6. Dojo
+            <ul>
+              <li>Quem somos nozes?</li>
+              <li>O que é React?</li>
+              <li>ES6</li>
+              <li>Como usar o React?</li>
+              <li>Redux</li>
+              <li>Setup</li>
+              <li>Dojo</li>
+            </ul>
           </textarea>
         </section>
         <!-- ##################################################
@@ -97,7 +100,7 @@
         </section>
 				<section data-markdown>
           <textarea data-template>
-            # 1 - O que é React?
+            # O que é React?
           </textarea>
         </section>
         <section data-markdown>
@@ -155,6 +158,454 @@
               <img src="img/poderoso.jpg" alt="Model View Controller"></img>
             </textarea>
           </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              # ES6
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## O que é?
+
+                ES6, ECMAScript 6 ou ES2015, é simplesmente a mais nova versão do JavaScript.
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+              ## ECMAScript x JavaScript x ES
+              
+              <p>Uma dúvida bem comum é o porquê dessa mudança do nome. </p>
+              <p>Na verdade não houve nenhuma mudança: JavaScript é como nós chamamos a linguagem, só que esse nome é um trademark da Oracle (que veio após a compra da Sun). </p>
+              <p>O nome oficial da linguagem é ECMAScript. E ES é simplesmente uma abreviação do mesmo.</p>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Objetivos do ES6
+
+                <ul>
+                  <li>Ser uma linguagem melhor para construir aplicações complexas.</li>
+                  <li>Resolver problemas antigos do JavaScript.</li>
+                  <li>Facilidade no desenvolvimento de libraries.</li>
+                </ul>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Como usar?
+
+                Os navegadores da atualidade ainda não possuem suporte nativo a ES6... 
+                Portanto como é possível utilizá-lo?
+
+                <img class="fragment fade-in" data-fragment-index="1" src="img/babel.png" alt="Babel" style="height: 150px;">
+
+                <p class="fragment fade-in" data-fragment-index="2">O Babel transforma o seu código de ES6 para ES5 (versão que a maioria dos <i>browsers</i> dá suporte hoje).</p>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Quais as novidades do ES6
+
+                <ul>
+                  <li>Declaração de variáveis</li>
+                  <li>Parâmetro de funções</li>
+                  <li>Programação Funcional</li>
+                  <li>Destructuring</li>
+                  <li>Spread Operator</li>
+                  <li>Orientação a Objetos</li>
+                  <li>ES6 Modules</li>
+                </ul>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Declaração de variáveis
+
+                ### var x let
+
+                A diferença principal entre o <i>var</i> e o <i>let</i> é que enquanto o primeiro tem escopo de função, o segundo possui escopo de bloco.
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+              <pre class="stretch">
+                <code>
+                  // escopo de função com var
+                  function foo() {
+                    var a = 1;
+                    if (true) {
+                      var b = 2; // b é declarado dentro do if mas é visível fora
+                    }
+                    var c = a + b; // 3
+                  }
+                  
+                  //escopo de bloco com let
+                  function bar() {
+                    let a = 1
+                    if (true) {
+                      let b = 2 // b é declarado dentro do if e não é visível fora
+                    }
+                    let c = a + b // Uncaught ReferenceError: b is not defined
+                  }
+                </code>
+              </pre>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Declaração de variáveis
+
+                ### let x const
+
+                <i>const</i> funciona de forma semelhante. A única diferença é que as variáveis criadas não podem ser reatribuídas.
+
+                <pre class="scretch">
+                  <code>
+                      let a = 1
+                      a = 2
+                      
+                      const b = 1
+                      b = 2 // Uncaught SyntaxError "b" is read-only
+                  </code>
+                </pre>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Declaração de variáveis
+
+                É comum achar que <i>const</i> deixa a variável imutável. Isso não é verdade. As propriedades de um objeto, por exemplo, podem ser alteradas:
+
+                <pre class="scretch">
+                  <code>
+                      const objeto = {
+                        propriedade: 1
+                      }
+                      
+                      objeto.propriedade = 2
+                      console.log(objeto.propriedade) // 2
+                  </code>
+                </pre>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ## Parâmetro de funções
+
+                Algumas pequenas mudanças foram feitas, as quais trouxeram grandes benefícios.
+
+                <ul>
+                  <li>default parameters</li>
+                  <li>rest parameters</li>
+                </ul>
+            </textarea>
+          </section>
+          <section  data-markdown>
+            <textarea data-template>
+                ### default parameters
+                
+                Os parâmetros de funções tem <i>undefined</i> como valor <i>default</i>. 
+                
+                Porém, em alguns casos, pode ser necessário utilizar um outro valor. Com a versão atual do JavaScript <b>(ES5)</b> nós já podemos fazer isso dessa forma.
+
+                <pre class="scretch">
+                  <code>
+                    var multiplicar = function(x, y) {
+                      y = y || 1;
+                      return x * y;
+                    };
+
+                    multiplicar(3, 2); // 6
+                    multiplicar(3); // 3
+                  </code>
+                </pre>
+            </textarea>
+          </section>
+          <section  data-markdown>
+              <textarea data-template>
+                  ### default parameters
+                  
+                  Porém com <b>ES6</b> é muito mais simples!
+                  
+                  Porém, em alguns casos, pode ser necessário utilizar um outro valor. Com a versão atual do JavaScript <b>(ES5)</b> nós já podemos fazer isso dessa forma.
+  
+                  <pre class="scretch">
+                    <code>
+                      const multiplicar = (x, y = 1) => {
+                        return x * y
+                      }
+
+                      multiplicar(3, 2) // 6
+                      multiplicar(3) // 3
+                    </code>
+                  </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Programação Funcional
+
+                ### arrow functions
+
+                Os <i>arrow functions</i> são um excelente <i>syntax sugar</i> na criação de funções. Uma função que seria escrita dessa forma em ES5.
+
+                <pre class="scretch">
+                  <code>
+                    var somar = function(x, y) {
+                      return x + y;
+                    };
+
+                    somar(1, 2); // 3
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Programação Funcional
+
+                ### arrow functions
+
+                Já utilizando ES6.
+
+                <pre class="scretch">
+                  <code>
+                    const somar = (x, y) => {
+                      return x + y
+                    }
+
+                    somar(1, 2) // 3
+
+                    const somaUmaLinha = (x, y) => x + y
+                    
+                    somaUmaLinha(1, 2) // 3
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Destructuring
+
+                Uma nova forma de declarar variáveis extraindo valores de objetos e arrays é através do destructuring.
+
+                <pre class="scretch">
+                  <code>
+                    const pessoa = { nome: 'Felipe', estadoCivil: 'solteiro' }
+                    const { nome, estadoCivil } = pessoa
+
+                    console.log(nome) // Felipe
+                    console.log(estadoCivil) // solteiro
+
+                    
+                    const [n1, n2] = [1, 2]
+
+                    console.log(n1) // 1
+                    console.log(n2) // 2
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Spread Operator
+
+                O <i>spread operator</i> permite uma expressão ser expandida em locais onde múltiplos argumentos (por chamadas de função) ou múltiplos elementos (por array literais) são esperados.
+
+                <pre class="scretch">
+                  <code>
+                    minhaFuncao(...objIteravel) // chamada de função
+
+                    [...objIteravel, 4, 5, 6] // array literais
+
+                    [a, b, ...objIteravel] = [1, 2, 3, 4, 5] // Destructuring
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Spread Operator
+
+                <pre class="scretch">
+                  <code>
+                    function minhaFuncao(x, y, z) { // codigo da função }
+                    var args = [0, 1, 2];
+                    minhaFuncao(...args);
+
+                    var partes = ['ombros', 'joelhos'];
+                    var letra = ['cabeca', ...partes, 'e', 'dedos']; 
+                    // ["cabeca", "ombros", "joelhos", "e", "dedos"]
+
+                    var camposData = lerCamposData(bancoDeDados);
+                    var d = new Date(...camposData);
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Orientação a Objetos
+
+                ### Classes
+
+                Classes nos dão uma sintaxe amigável que definem o estado e o comportamento de objetos que representam as abstrações que usamos diariamente.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Orientação a Objetos
+
+                ### constructor
+
+                O método constructor tem como tarefa fazer a inicialização da instância. Ele é chamado automaticamente na criação da mesma e garante que ela esteja em um estado válido.
+                
+                Por exemplo, se necessitarmos de uma abstração para carros em que cada carro possui uma marca, poderíamos implementar dessa forma.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                <pre class="scretch">
+                  <code style="max-height: 600px;">
+                    class Carro {
+                      constructor(marca) {
+                        this._marca = marca
+                      }
+                      
+                      getMarca() {
+                        return this._marca
+                      }
+                      
+                      setMarca(marca) {
+                        this._marca = marca
+                      }
+                    }
+                    
+                    const carro = new Carro('ferrari')
+                    carro.getMarca() // ferrari
+                    carro.setMarca('porsche')
+                    carro.getMarca() // porsche
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## Orientação a Objetos
+
+                ### getters/setters
+
+                Como getters e setters são muito comuns na utilização de classes, o ES6 veio com um syntax sugar para lidar com os mesmos.
+
+                Lembrando que a principal função dos getters/setters é proteger os dados internos das instâncias de um objeto.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                <pre class="scretch">
+                  <code style="max-height: 600px;">
+                    class Carro {
+                      constructor(marca) {
+                        this._marca = marca
+                      }
+                      
+                      get marca() {
+                        return this._marca
+                      }
+                      
+                      set marca(marca) {
+                        this._marca = marca
+                      }
+                    }
+                    
+                    const carro = new Carro('ferrari')
+                    carro.marca // ferrari
+                    carro.marca = 'porsche'
+                    carro.marca // porsche
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ### herança
+                <pre class="scretch">
+                  <code style="max-height: 575px;">
+                    class Animal {
+                      constructor(name) {
+                        this._name = name
+                      }
+                        
+                      fala() {
+                        console.log(`${this._name} faz barulho`)
+                      }
+                    }
+                    
+                    class Cachorro extends Animal {
+                      fala() {
+                        console.log(`${this._name} latindo!!`)
+                      }
+                    }
+                    
+                    const viralata = new Cachorro('Rex')
+                    viralata.fala() // Rex latindo!! 
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## ES6 Modules
+                
+                A maioria dos desenvolvedores que já trabalhou em projetos grandes sabe a importância dos módulos: organizar o sistema, aumentar o reuso e diminuir a complexidade de cada pequeno trecho do seu code base.
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## ES6 Modules
+                
+                ### export/import
+
+                Exportar e importar módulos são tarefas bem simples.
+
+                <pre class="scretch">
+                  <code>
+                    // util.js
+                    export function somar(x, y) {
+                      return x + y
+                    }
+
+                    // index.js
+                    import { somar } from 'util'
+                    somar(1, 2) // 3
+                  </code>
+                </pre>
+              </textarea>
+            </section>
+            <section  data-markdown>
+              <textarea data-template>
+                ## ES6 Modules
+                
+                ### default
+
+                Como o próprio nome diz <i>default</i> (padrão), neste caso o arquivo que exporta uma função padrão, fazendo com que o nome do importa não tenha um nome fixo.
+
+                <pre class="scretch">
+                  <code>
+                    // util.js
+                    export default function(x, y) {
+                      return x + y
+                    }
+
+                    // index.js
+                    import soma from 'util'
+                    soma(1, 2) // 3
+                  </code>
+                </pre>
+              </textarea>
+            </section>
         </section>
         <!-- ##################################################
              #######    Parte 3 - Como usar o React? ##########
