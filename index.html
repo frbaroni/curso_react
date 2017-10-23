@@ -56,10 +56,11 @@
           </section>
           <section data-markdown>
             <textarea data-template>
-            - IBM
-            - GFT
-            - Stefanini/Cielo
-            - GFT
+							## Empresas
+	            - IBM
+	            - GFT
+	            - Stefanini/Cielo
+	            - GFT
             </textarea>
           </section>
           <section>
@@ -70,10 +71,11 @@
           </section>
           <section data-markdown>
             <textarea data-template>
-            - iClouds
-            - Communicar
-            - GFT
-            - Solteiro
+							## Empresas
+	            - iClouds
+	            - Communicar
+	            - GFT
+	            - Solteiro
             </textarea>
           </section>
           <section>
@@ -108,7 +110,7 @@
         <section>
           <section data-markdown>
             <textarea data-template>
-              Desenvolvida para resolver um problema
+              Desenvolvida para resolver um problema.
             </textarea>
           </section>
           <section>
@@ -121,7 +123,7 @@
         <section>
           <section data-markdown>
             <textarea data-template>
-              React é uma library, não uma framework
+              React é uma library, não uma framework.
             </textarea>
           </section>
           <section data-markdown>
@@ -131,22 +133,25 @@
               requisições HTTP, router, manipulação de estados, etc.
 
               React é uma library que deixa aberto para o desenvolvedor escolher
-              os componentes para os varios aspectos do seu projeto.
+              os componentes para os vários aspectos do seu projeto.
             </textarea>
           </section>
           <section data-markdown>
             <textarea data-template>
-              ## Um ambiente completo de soluções:
+              ## Um ambiente completo de soluções
 
-              - Pode mapear URLs para Paginas (routing): React-Router, Universal Router
-              - Pode fazer requisições HTTP: $.ajax, Axios, fetch
-              - Pode gerenciar estado: Redux
-              - Pode compilar nativamente aplicações para smartphones: React Native
+              - Pode mapear URLs para páginas (routing): React-Router, Universal Router.
+              - Pode fazer requisições HTTP: $.ajax, Axios, fetch.
+              - Pode gerenciar estado: Redux.
+              - Pode compilar nativamente aplicações para smartphones: React Native.
             </textarea>
           </section>
           <section data-markdown>
             <textarea data-template>
-              React é super poderoso e deixa todas as decisões para o desenvolvedor
+              React é super poderoso e deixa todas as decisões para o desenvolvedor.
+							<p class="fragment fade-in">
+								<span class="fragment fade-out" style="color: #ff2c2d;">FODEU</span>
+							</p>
               <img src="img/poderoso.jpg" alt="Model View Controller"></img>
             </textarea>
           </section>
@@ -187,7 +192,7 @@
           </section>
           <section data-markdown>
             <textarea data-template>
-              React: é tudo sobre componentes
+              > Tudo é componente - React, 2013
             </textarea>
           </section>
           <section>
@@ -196,7 +201,7 @@
             <pre>
               <code data-trim data-noescape>
 function PrimeiroComponente(props) {
-return &lt;span&gt;Olá {props.nome}&lt;/span&gt;
+  return &lt;span&gt;Olá {props.nome}&lt;/span&gt;
 }
               </code>
             </pre>
@@ -229,7 +234,7 @@ export default OiMundo;
             <textarea data-template>
               ## Functional vs Class components
               - Functional Components são indicados para casos bem simples, geralmente só renderizam alguma coisa.
-              - Class Components já são indicados para os casos complexos, geralmente envolvendo estados.
+              - Class Components já são indicados para os casos complexos, geralmente envolvendo estado.
             </textarea>
           </section>
         </section>
@@ -239,9 +244,9 @@ export default OiMundo;
               ## Props
               - O que são?
               - Como passamos a prop para o componente?
-              - Como lemos suas propriedades?
-              - Definindo valores padrões para as Props
-              - propTypes
+              - Como acessá-las?
+              - Definindo valores padrões.
+              - propTypes.
             </textarea>
           </section>
           <section>
@@ -276,7 +281,7 @@ export default OiMundo;
             </pre>
           </section>
           <section>
-            <h2>Como lemos suas propriedades?</h2>
+            <h2>Como acessá-las?</h2>
             <pre>
               <code data-trim data-noescape>
 class OiMundo extends Component {
@@ -290,7 +295,7 @@ class OiMundo extends Component {
             </pre>
           </section>
           <section>
-            <h2>Definindo valores padrões para as Props</h2>
+            <h2>Definindo valores padrões</h2>
             <pre>
               <code data-trim data-noescape>
 class OiMundo extends Component {
@@ -308,7 +313,7 @@ class OiMundo extends Component {
             </pre>
           </section>
           <section>
-            <h2>Definindo valores padrões para as Props</h2>
+            <h2>Definindo valores padrões</h2>
             <pre>
               <code data-trim data-noescape>
         &lt;OiMundo nomeee="Fernando" /&gt;
@@ -352,8 +357,8 @@ class OiMundo extends Component {
               ## State
               - O que são?
               - Como inicializamos um State?
-              - Como lemos o State?
-              - Atualizando o State
+              - Como acessá-lo?
+              - Atualizando o State.
             </textarea>
           </section>
           <section>
@@ -399,7 +404,7 @@ class Estado extends Component {
             </pre>
           </section>
           <section>
-            <h2>Como lemos o State?</h2>
+            <h2>Como acessá-lo?</h2>
             <pre>
               <code data-trim data-noescape>
 class Estado extends Component {
@@ -440,7 +445,7 @@ class Estado extends Component {
               ## Eventos
               - O que são?
               - Quais são?
-              - Como usa-los?
+              - Como usá-los?
             </textarea>
           </section>
           <section>
@@ -516,8 +521,8 @@ class Estado extends Component {
           onMouseOver=<mark>{this.quandoMouseEntrar}</mark>&gt;
               </code>
             </pre>
-            Detalhe: atribuimos ao elemento: uma referencia de uma função. <br />
-            Não estamos invocando ela nessa expressão, pois para invocala, precisariamos
+            Detalhe, atribuímos ao elemento uma referência de uma função. <br />
+            Não estamos invocando ela nessa expressão, pois para invocá-la, precisaráamos
             usar () depois de seu nome.
           </section>
           <section>
@@ -579,7 +584,7 @@ quandoMouseEntrar = (evento) =&gt; {
 					<section data-markdown>
 						<textarea data-template>
 							## O estado é imutável
-							O estado da aplicação é inalterável, a unica maneira de afeta-lo é emitindo uma Action com a mudança.
+							O estado da aplicação é inalterável, a única maneira de afetá-lo é emitindo uma Action com a mudança.
 						</textarea>
 					</section>
 					<section data-markdown>
@@ -617,7 +622,7 @@ quandoMouseEntrar = (evento) =&gt; {
 					<section data-markdown>
 						<textarea data-template>
 							## Reducers
-							Actions descrevem de fato que algo aconteceu e o papel dos Reducers é transmitir o que aconteceu para alterar devidamente sua store
+							Actions descrevem de fato que algo aconteceu e o papel dos Reducers é transmitir o que aconteceu para alterar devidamente sua store.
 						</textarea>
 					</section>
 					<section data-markdown>
