@@ -1,4 +1,5 @@
 let nextTodoId = 0
+
 export const adicionar = texto => {
   return {
     type: 'ADICIONAR',

@@ -13,19 +13,13 @@ const mostrarItens = (todos, filtro) => {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    todos: mostrarItens(state.todos, state.filtro)
-  }
-}
+const mapStateToProps = state => ({
+  todos: mostrarItens(state.todos, state.filtro)
+})
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onTodoClick: id => {
-      dispatch(trocarEstado(id))
-    }
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  onTodoClick: id => dispatch(trocarEstado(id))
+})
 
 const ItensDaLista = connect(
   mapStateToProps,
